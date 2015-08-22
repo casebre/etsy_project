@@ -1,11 +1,12 @@
 <h1>Listing listings</h1>
 
-<table>
+<table border=1>
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
       <th>Price</th>
+      <th>Thumb</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
         <td><%= listing.name %></td>
         <td><%= listing.description %></td>
         <td><%= listing.price %></td>
+	<td><%= image_tag listing.image.url(:thumb)%></td>
         <td><%= link_to 'Show', listing, class: "btn btn-link" %></td>
         <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %></td>
         <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
