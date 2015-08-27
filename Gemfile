@@ -29,6 +29,11 @@ gem 'spring',        group: :development
 # bootstrap, taken from Udemy Ruby on Rails (Alex Yang) program
 gem 'bootstrap-sass', '~> 3.3.5'
 gem "paperclip", "~> 4.3"
+#Dropbox, used to storage images
+gem "paperclip-dropbox", ">= 1.1.7"
+
+#Figaro will protect some of my files
+gem "figaro"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
