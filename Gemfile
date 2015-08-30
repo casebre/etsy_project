@@ -35,6 +35,9 @@ gem "paperclip-dropbox", ">= 1.1.7"
 #Figaro will protect some of my files
 gem "figaro"
 
+#Devise helps to manage users
+gem "devise"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
