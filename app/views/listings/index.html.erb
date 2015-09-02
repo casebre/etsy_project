@@ -9,7 +9,7 @@
 				        <p><%=listing.description %></p>
         				<p>Price: <%=listing.price %></p>
 					<% if listing.user %>
-						<p><%= "Sold by " #{listing.user.name} %></p>
+						<p><%= "Sold by #{listing.user.name}" %></p>
 					<% end %>
 				        <p><%= link_to 'Show', listing, class: "btn btn-link" %> <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %> <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
 </p>
