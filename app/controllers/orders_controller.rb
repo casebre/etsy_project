@@ -5,6 +5,14 @@ class OrdersController < ApplicationController
 
   respond_to :html
 
+  def sales 
+    @orders = Order.all.where(seller: current_user.id).order("created_at DESC")
+  end
+
+  def purchases 
+    @orders = Order.all.where(buyer: current_user.id).order("created_at DESC")
+  end
+
   def index
     @orders = Order.all
     respond_with(@orders)
@@ -30,6 +38,7 @@ class OrdersController < ApplicationController
     @seller = @listing.user #seller is the same who creates the relative listing
     @order.listing_id = @listing.id
     @order.buyer_id = current_user.id
+    #@order.seller_id = @listing.user_id # was: @order.seller_id = @seller.id
     @order.seller_id = @seller.id
     flash[:notice] = 'Order was sucessfully created.' if @order.save
     respond_with(@listing)

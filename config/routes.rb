@@ -6,12 +6,11 @@ Rails.application.routes.draw do
     resources :orders
   end
   root 'listings#index'
-
   get '/about' => 'pages#about'
-
   get '/contact' => 'pages#contact'
-
   get "seller" => "listings#seller"
+  get "sales" => "orders#sales"
+  get "purchases" => "orders#purchases"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
