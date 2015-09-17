@@ -13,22 +13,10 @@ class OrdersController < ApplicationController
     @orders = Order.all.where(buyer: current_user.id).order("created_at DESC")
   end
 
-  def index
-    @orders = Order.all
-    respond_with(@orders)
-  end
-
-  def show
-    respond_with(@order)
-  end
-
   def new
     @order = Order.new
     @listing = Listing.find(params[:listing_id])
     respond_with(@order)
-  end
-
-  def edit
   end
 
   def create
@@ -42,16 +30,6 @@ class OrdersController < ApplicationController
     @order.seller_id = @seller.id
     flash[:notice] = 'Order was sucessfully created.' if @order.save
     respond_with(@listing)
-  end
-
-  def update
-    @order.update(order_params)
-    respond_with(@order)
-  end
-
-  def destroy
-    @order.destroy
-    respond_with(@order)
   end
 
   private
