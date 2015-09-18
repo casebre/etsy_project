@@ -38,6 +38,10 @@ gem "figaro"
 #Devise helps to manage users
 gem "devise"
 
+#Stripe helps to accept payments
+gem 'stripe'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
