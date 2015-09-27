@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # including listings id number in url orders page
   resources :listings do
-    resources :orders, only: :new, :create
+    resources :orders, only: [:new, :create]
   end
   root 'listings#index'
   get '/about' => 'pages#about'
